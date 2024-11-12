@@ -41,4 +41,8 @@ public class ProcedureSteps {
     public void verifyProcedureHaveNameContainsIsDisplayedOnTheTable(String name) {
         procedurePage.verifyProcedureHaveNameContainsIsDisplayedOnTheTable(name);
     }
+    @Step
+    public void selectButton(String button) {
+        procedurePage.selectButton(button);
+    }
 }

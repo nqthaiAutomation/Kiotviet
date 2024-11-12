@@ -12,8 +12,9 @@ import net.thucydides.core.annotations.Steps;
 public class ProcedureDefs {
     @Steps
     ProcedureSteps procedureSteps;
+
     @And("^I select menu \"([^\"]*)\"$")
-    public void iSelectMenu(String menu)  {
+    public void iSelectMenu(String menu) {
         procedureSteps.selectMenu(menu);
 
     }
@@ -30,12 +31,12 @@ public class ProcedureDefs {
     }
 
     @And("^I verify buttons \"([^\"]*)\" displayed$")
-    public void iVerifyButtonsDisplayed(String button)   {
+    public void iVerifyButtonsDisplayed(String button) {
         procedureSteps.verifyButtonsDisplayed(button);
     }
 
     @And("^I verify type filters \"([^\"]*)\" displayed$")
-    public void iVerifyTypeFilters(String typeFilters)   {
+    public void iVerifyTypeFilters(String typeFilters) {
         procedureSteps.verifyTypeFilters(typeFilters);
 
     }
@@ -46,7 +47,7 @@ public class ProcedureDefs {
     }
 
     @And("^I verify table with title column \"([^\"]*)\"$")
-    public void iVerifyTableWithTitleColumn(String column)   {
+    public void iVerifyTableWithTitleColumn(String column) {
         procedureSteps.verifyTableWithTitleColumn(column);
 
     }
@@ -60,6 +61,27 @@ public class ProcedureDefs {
     @Then("^I verify procedure have name contains \"([^\"]*)\" is displayed on the list$")
     public void iVerifyProcedureHaveNameContainsIsDisplayedOnTheList(String name) {
         procedureSteps.verifyProcedureHaveNameContainsIsDisplayedOnTheTable(name);
+
+    }
+
+    @And("^I select button \"([^\"]*)\"$")
+    public void iSelectButton(String button) {
+        procedureSteps.selectButton(button);
+
+    }
+
+    @Then("^I verify popup \"([^\"]*)\" displayed$")
+    public void iVerifyPopupDisplayed(String headerPopup) {
+
+    }
+
+    @And("^I verify tabs \"([^\"]*)\" displayed$")
+    public void iVerifyTabsDisplayed(String tabsName) {
+
+    }
+
+    @And("^I verify buttons \"([^\"]*)\" displayed on the bottom$")
+    public void iVerifyButtonsDisplayedOnTheBottom(String buttons) {
 
     }
 }

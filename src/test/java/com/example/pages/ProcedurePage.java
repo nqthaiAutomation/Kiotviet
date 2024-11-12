@@ -89,4 +89,10 @@ public class ProcedurePage extends PageObject {
             hightLightElement(element);
         }
     }
+
+    public void selectButton(String button) {
+        String [] buttons= button.split("->");
+        String xPathButtonParent = "//*[@class='btn btn-success']/*[text()='"+buttons[0]+"']";
+        clickOn(getElement(xPathButtonParent));
+    }
 }

@@ -8,7 +8,7 @@ import net.serenitybdd.cucumber.CucumberWithSerenity;
 import org.junit.runner.RunWith;
 
 @RunWith(CucumberWithSerenity.class)
-@CucumberOptions(glue = "com.example", features = "src/test/resources/features/", tags = "@Procedure")
+@CucumberOptions(glue = "com.example", features = "src/test/resources/features/", tags = "@AddProcedure")
 //test SCQS88 with short prefix
 //test SCQS83 with white port
 //upload file test\resources\data\CPQ\SCQS68\SCQ68.ebx to /ebx_env/ebx_home/ebxRepository/archives to test SCQS68 and SCQS69

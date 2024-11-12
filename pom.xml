@@ -14,11 +14,11 @@
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
     <serenity.version>2.0.87</serenity.version>
     <serenity.cucumber.version>1.9.45</serenity.cucumber.version>
-    <slf4j.version>1.7.7</slf4j.version>
+<!--    <slf4j.version>1.7.7</slf4j.version>-->
     <junit.version>4.12</junit.version>
-    <rest-assured.version>3.0.7</rest-assured.version>
-    <log4j.version>1.2.17</log4j.version>
-    <jackson.version>2.9.7</jackson.version>
+<!--    <rest-assured.version>3.0.7</rest-assured.version>-->
+<!--    <log4j.version>1.2.17</log4j.version>-->
+<!--    <jackson.version>2.9.7</jackson.version>-->
     <webdriver.driver>chrome</webdriver.driver>
     <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
   </properties>
@@ -47,69 +47,69 @@
       <version>${serenity.version}</version>
     </dependency>
 
-    <dependency>
-      <groupId>org.slf4j</groupId>
-      <artifactId>slf4j-simple</artifactId>
-      <version>${slf4j.version}</version>
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>org.slf4j</groupId>-->
+<!--      <artifactId>slf4j-simple</artifactId>-->
+<!--      <version>${slf4j.version}</version>-->
+<!--    </dependency>-->
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
       <version>${junit.version}</version>
       <!-- <scope>test</scope> -->
     </dependency>
-    <dependency>
-      <groupId>io.rest-assured</groupId>
-      <artifactId>rest-assured</artifactId>
-      <version>${rest-assured.version}</version>
-      <!-- <scope>test</scope> -->
-    </dependency>
-    <dependency>
-      <groupId>org.assertj</groupId>
-      <artifactId>assertj-core</artifactId>
-      <version>3.8.0</version>
-    </dependency>
-    <dependency>
-      <groupId>log4j</groupId>
-      <artifactId>log4j</artifactId>
-      <version>${log4j.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-core</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-annotations</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.fasterxml.jackson.core</groupId>
-      <artifactId>jackson-databind</artifactId>
-      <version>${jackson.version}</version>
-    </dependency>
-    <dependency>
-      <groupId>com.sikulix</groupId>
-      <artifactId>sikulixapi</artifactId>
-      <version>2.0.5</version> <!-- Thay đổi phiên bản nếu cần -->
-    </dependency>
-    <dependency>
-      <groupId>com.jcraft</groupId>
-      <artifactId>jsch</artifactId>
-      <version>0.1.55</version>
-    </dependency>
-    <dependency>
-      <groupId>jakarta.xml.soap</groupId>
-      <artifactId>jakarta.xml.soap-api</artifactId>
-      <version>1.4.1</version>
-      <scope>test</scope>
-    </dependency>
-    <dependency>
-      <groupId>io.github.bonigarcia</groupId>
-      <artifactId>webdrivermanager</artifactId>
-      <version>5.3.0</version> <!-- phiên bản mới nhất có thể thay đổi -->
-    </dependency>
+<!--    <dependency>-->
+<!--      <groupId>io.rest-assured</groupId>-->
+<!--      <artifactId>rest-assured</artifactId>-->
+<!--      <version>${rest-assured.version}</version>-->
+<!--      &lt;!&ndash; <scope>test</scope> &ndash;&gt;-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>org.assertj</groupId>-->
+<!--      <artifactId>assertj-core</artifactId>-->
+<!--      <version>3.8.0</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>log4j</groupId>-->
+<!--      <artifactId>log4j</artifactId>-->
+<!--      <version>${log4j.version}</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--      <artifactId>jackson-core</artifactId>-->
+<!--      <version>${jackson.version}</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--      <artifactId>jackson-annotations</artifactId>-->
+<!--      <version>${jackson.version}</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.fasterxml.jackson.core</groupId>-->
+<!--      <artifactId>jackson-databind</artifactId>-->
+<!--      <version>${jackson.version}</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.sikulix</groupId>-->
+<!--      <artifactId>sikulixapi</artifactId>-->
+<!--      <version>2.0.5</version> &lt;!&ndash; Thay đổi phiên bản nếu cần &ndash;&gt;-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>com.jcraft</groupId>-->
+<!--      <artifactId>jsch</artifactId>-->
+<!--      <version>0.1.55</version>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>jakarta.xml.soap</groupId>-->
+<!--      <artifactId>jakarta.xml.soap-api</artifactId>-->
+<!--      <version>1.4.1</version>-->
+<!--      <scope>test</scope>-->
+<!--    </dependency>-->
+<!--    <dependency>-->
+<!--      <groupId>io.github.bonigarcia</groupId>-->
+<!--      <artifactId>webdrivermanager</artifactId>-->
+<!--      <version>5.3.0</version> &lt;!&ndash; phiên bản mới nhất có thể thay đổi &ndash;&gt;-->
+<!--    </dependency>-->
     <dependency>
       <groupId>org.json</groupId>
       <artifactId>json</artifactId>

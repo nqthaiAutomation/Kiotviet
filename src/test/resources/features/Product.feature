@@ -1,5 +1,5 @@
 @Procedure
-Feature: procedure feature
+Feature: Pocedure page
 
   Background:
     Given  I login susses
@@ -34,3 +34,12 @@ Feature: procedure feature
     And I verify buttons "Kiểm kho->Xuất  file" displayed
     And I verify type filters "Thời gian-> Trạng thái-> Người tạo" displayed
     And I verify table with title column "Mã kiểm kho->Thời gian-> Ngày cân bằng->SL thực tế->Tổng thực tế->Tổng chênh lệch->SL lệch tăng->SL lệch giảm->Ghi chú"
+  @AddProcedure
+  Scenario: Add new procedure
+    When I select menu "Hàng hóa -> Danh mục"
+    And I select button "Thêm mới-> Thêm hàng hóa"
+    Then I verify popup "Thêm hàng" displayed
+    And I verify tabs "Thông tin->Mô tả chi tiết->Bảo hành, bảo trì" displayed
+    And I verify buttons "Lưu->Lưu & Thêm mới->Lưu & Sao chép->Bỏ qua" displayed on the bottom
+
+
