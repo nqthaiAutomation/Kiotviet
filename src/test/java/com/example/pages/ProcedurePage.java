@@ -77,6 +77,7 @@ public class ProcedurePage extends PageObject {
 
     public void inputIntoTextboxSearch(String value) {
         inputToElement(xPathInputSearch, value + Keys.ENTER);
+        waitABit(2000);
         new FluentWait<WebDriver>(getDriver())
                 .withTimeout(Duration.ofSeconds(10))
                 .pollingEvery(Duration.ofMillis(500))
