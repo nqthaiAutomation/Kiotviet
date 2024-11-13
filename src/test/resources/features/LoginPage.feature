@@ -9,7 +9,8 @@ Feature: Login Page
     And I input "dienthoaithongminh02" into address access
     And I click button " Vào cửa hàng " on the popup
     Then I verify form login displayed
-    And I input into form with information below
+    And I input into form login with information below
+
       | username   | password |
       | 0379099441 | Thai1984   |
     And I click button "Quản lý" on the form login
@@ -25,7 +26,8 @@ Feature: Login Page
     And I input "dienthoaithongminh02" into address access
     And I click button " Vào cửa hàng " on the popup
     Then I verify form login displayed
-    And I input into form with information below
+    And I input into form login with information below
+
       | username   | password |
       | 0379099441 | Thai1984   |
     And I click button "Bán hàng" on the form login
@@ -41,7 +43,8 @@ Feature: Login Page
     And I input "<Address>" into address access
     And I click button " Vào cửa hàng " on the popup
     Then I verify form login displayed
-    And I input into form with information below
+    And I input into form login with information below
+
       | username   | password   |
       | <userName> | <passWord> |
     And I click button "Bán hàng" on the form login

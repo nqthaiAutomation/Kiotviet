@@ -27,7 +27,7 @@ public class LoginDefs {
 
     {
         try {
-            content = new String(Files.readAllBytes(Paths.get("src/test/data/infostore.json")));
+            content = new String(Files.readAllBytes(Paths.get("src/test/data/InforStore/infostore.json")));
         } catch (IOException e) {
             Assert.fail("Wrong when read file json");
         }
@@ -48,7 +48,7 @@ public class LoginDefs {
         loginSteps.verifyFormLoginDisplayed();
     }
 
-    @And("I input into form with information below")
+    @And("I input into form login with information below")
     public void iInputIntoFormWithInformationBelow(DataTable dataTable) {
         List<Map<String, String>> data = dataTable.asMaps(String.class, String.class);
         for(Map<String,String>row:data){
