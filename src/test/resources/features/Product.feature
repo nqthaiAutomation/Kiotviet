@@ -3,7 +3,8 @@ Feature: Pocedure page
 
   Background:
     Given  I login susses
-  @Procedure01
+
+  @SC01
   Scenario: Show all procedures
     When I select menu "Hàng hóa -> Danh mục"
     Then I verify page "Hàng hóa" displayed
@@ -35,21 +36,61 @@ Feature: Pocedure page
     And I verify type filters "Thời gian-> Trạng thái-> Người tạo" displayed
     And I verify table with title column "Mã kiểm kho->Thời gian-> Ngày cân bằng->SL thực tế->Tổng thực tế->Tổng chênh lệch->SL lệch tăng->SL lệch giảm->Ghi chú"
 
-  @AddProcedure
+
+  @SC02
   Scenario: Add new procedure
     When I select menu "Hàng hóa -> Danh mục"
-    And I select button "Xuất  file"
-    And I wait 6000 minute
-#    And I upload file "src/test/data/SCPRO01/MauFileSanPham.xlsx"
-#    And
-#    Then I verify popup "Thêm hàng" displayed
-#    And I verify tabs "Thông tin->Mô tả chi tiết->Bảo hành, bảo trì" displayed
-#    And I verify buttons "Lưu->Lưu & Thêm mới->Lưu & Sao chép->Bỏ qua" displayed on the bottom
+    And I select button "Thêm mới-> Thêm hàng hóa"
+    And I input into form with information below
+      | Tên hàng:TXT | Giá vốn:NUMBER | Nhóm hàng:OPTION | Giá bán:NUMBER | Tồn kho:NUMBER | Trọng lượng:NUMBER | Bán trực tiếp:CHECKBOX | Upload:IMAGE                      |
+      | TestA        | 5000           | Trang điểm       | 500000         | 2000           | 20                 | false                  | src/test/data/SCPRO01/Capture.JPG |
+    And I click button "Lưu" on the bottom
+    Then I verify procedure "TestA" is added susses
+
+  @SC03
+  Scenario: Delete Procedure
+    When I select menu "Hàng hóa -> Danh mục"
+    And I input "TestA" into textbox search
+    And I expand first procedure
+    And I click button "Xóa" on the table
+    And I click button "Đồng ý" on the bottom
+    Then I verify procedure deleted
+
+  @SC04
+  Scenario: Add new Categor procedure
+    When I select menu "Hàng hóa -> Danh mục"
+    And I select button "Thêm mới-> Thêm hàng hóa"
+#    And I click button add new of field "Nhóm hàng"
 #    And I input into form with information below
-#      | Tên hàng:TXT | Giá vốn:NUMBER | Nhóm hàng:OPTION | Giá bán:NUMBER | Tồn kho:NUMBER | Trọng lượng:NUMBER | Bán trực tiếp:CHECKBOX | Upload:IMAGE                      |
-#      | TestA        | 5000           | Chăm sóc cơ thể  | 500000         | 2000           | 20                 | false                  | src/test/data/SCPRO01/Capture.JPG |
-#    And I click button "Lưu" on the bottom
-#    Then I verify procedure "TestA" is added susses
+#      | Tên nhóm:TXT | Nhóm cha:OPTION |
+#      | aaa5         | Mỹ phẩm         |
+#    And I click button "Lưu" on the dialog
+#    Then I verify message success "Cập nhật dữ liệu thành công" displayed
+#
+#    And I click button add new of field "Nhóm hàng"
+#    And I input into form with information below
+#      | Tên nhóm:TXT | Nhóm cha:OPTION |
+#      | aaa5         | Mỹ phẩm         |
+#    And I click button "Lưu" on the dialog
+#    Then I verify message error "Nhóm hàng: aaa5 đã tồn tại" displayed
+#    And I click button "Bỏ qua" on the bottom
+    And I click button add new of field "Thương hiệu"
+    And I input into form with information below
+      | Tên thương hiệu:TXT |
+      | aaa5                |
+    And I click button "Lưu" on the dialog
+    Then I verify message success "Cập nhật dữ liệu thành công" displayed
+
+    And I click button add new of field "Thương hiệu"
+    And I input into form with information below
+      | Tên thương hiệu:TXT |
+      | aaa5                |
+    And I click button "Lưu" on the dialog
+    Then I verify message error "Nhóm hàng: aaa5 đã tồn tại" displayed
+
+
+
+
 
 
 

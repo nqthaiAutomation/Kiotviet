@@ -87,4 +87,30 @@ public class ProcedureSteps {
     public void iUploadFile(String file) {
         procedurePage.iUploadFile(file);
     }
+
+    public void verifyNoDataNotFound() {
+        procedurePage.verifyNoDataNotFound();
+    }
+
+    public void clickButtonOnTheTable(String button) {
+        procedurePage.clickButtonOnTheTable(button);
+    }
+
+    public void expandFirstProcedure() {
+        procedurePage.expandFirstProcedure();
+    }
+
+
+
+    public void clickButtonAddNewOfField(String field) {
+        procedurePage.clickButtonAddNewOfField(field);
+    }
+
+    public void verifyMessageSuccessDisplayed(String message) {
+        procedurePage.verifyMessageSuccessDisplayed(message);
+    }
+
+    public void clickButtonOnTheDialog(String button) {
+        procedurePage.clickButtonOnTheDialog(button);
+    }
 }

@@ -11,7 +11,7 @@ public class LoginPages extends PageObject {
 
     private void inputToProcessLogin(String field, String addressAccess) {
         String xPathField = "//span[@data-label='" + field + "']/parent::label/input[@type='text']|//input[(@type='text' or @type='password') and @placeholder='" + field + "']";
-        inputToElement(xPathField, addressAccess);
+        inputToElement(getElement(xPathField), addressAccess);
     }
 
     public void clickButtonOnThePopup(String button) {

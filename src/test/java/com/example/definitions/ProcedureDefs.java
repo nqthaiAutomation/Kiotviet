@@ -103,7 +103,7 @@ public class ProcedureDefs {
         for (Map<String, String> row : data) {
             System.out.println(row.keySet());
             for (String column : row.keySet())
-                procedureSteps.inputValue(column.split(":")[0],column.split(":")[1],row.get(column));
+                procedureSteps.inputValue(column.split(":")[0], column.split(":")[1], row.get(column));
         }
     }
 
@@ -115,12 +115,12 @@ public class ProcedureDefs {
     }
 
     @Then("^I verify message error \"([^\"]*)\" displayed$")
-    public void iVerifyMessageErrorDisplayed(String message){
+    public void iVerifyMessageErrorDisplayed(String message) {
         procedureSteps.verifyMessageErrorDisplayed(message);
     }
 
     @Then("^I verify procedure \"([^\"]*)\" is added susses$")
-    public void iVerifyProcedureIsAddedSusses(String name)  {
+    public void iVerifyProcedureIsAddedSusses(String name) {
         procedureSteps.verifyProcedureIsAddedSusses(name);
     }
 
@@ -137,5 +137,37 @@ public class ProcedureDefs {
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
+    }
+
+
+
+    @Then("^I verify procedure deleted$")
+    public void iVerifyProcedureWithCodeDeleted()  {
+        procedureSteps.verifyNoDataNotFound();
+    }
+
+    @And("^I click button \"([^\"]*)\" on the table$")
+    public void iClickButtonOnTheTable(String button) {
+        procedureSteps.clickButtonOnTheTable(button);
+    }
+
+    @And("^I expand first procedure$")
+    public void iExpandFirstProcedure() {
+        procedureSteps.expandFirstProcedure();
+    }
+
+    @And("^I click button add new of field \"([^\"]*)\"$")
+    public void iClickButtonAddNewOfField(String field) throws Throwable {
+        procedureSteps.clickButtonAddNewOfField(field);
+    }
+
+    @Then("^I verify message success \"([^\"]*)\" displayed$")
+    public void iVerifyMessageSuccessDisplayed(String message) {
+        procedureSteps.verifyMessageSuccessDisplayed(message);
+    }
+
+    @And("^I click button \"([^\"]*)\" on the dialog$")
+    public void iClickButtonOnTheDialog(String button)  {
+        procedureSteps.clickButtonOnTheDialog(button);
     }
 }
