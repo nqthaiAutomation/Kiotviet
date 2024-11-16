@@ -280,19 +280,24 @@ public class ProcedurePage extends PageObject {
     }
     //chưa run dc
     public void clickButtonOnTheDialog(String button) {
-        String xPathbutton = "//input[@type='text' and (@id='trademarkAddOrEdit' or @id='shelvesAddOrEdit' or @id='idCategorySearchTerm')]/following::*//*[text()='%s']";
-        boolean checkDisplayed = false;
-        List<WebElementFacade> bt = getElements(String.format(xPathbutton, button));
-        System.out.println(bt.size());
-        for (WebElementFacade btn : bt) {
-            if (btn.isDisplayed()) {
-                checkDisplayed = true;
-                scrollToElement(btn);
-                clickOn(btn);
-                break;
-            }
+        String xPathbutton = "//input[@type='text' and (@id='trademarkAddOrEdit' or @id='shelvesAddOrEdit' or @id='idCategorySearchTerm') ]/ancestor::*[@kendo-window='categoryWindow' or  @k-window-transclude]//*[contains(text(),'%s')]";
+        for(WebElement btn:getElements(String.format(xPathbutton,button)))
+        if(btn.isDisplayed())
+        {
+            hightLightElement(btn);
+            clickOn(btn);
         }
-        Assert.assertTrue(checkDisplayed);
+    }
+
+    public void clickButtonOnTheFormUpload(String button) {
+        String xPathButton= "//*[contains(@class,'k-upload')]//input[@type='file']";
+        File file = new File("src/test/data/SCPRO01/MauFileSanPham.xlsx");
+        uploadOnTheFormUpload(xPathButton,file.getAbsolutePath());
+    }
+
+    private void uploadOnTheFormUpload(String xPathButton, String absolutePath) {
+        getElement(xPathButton).sendKeys(absolutePath);
+        waitABit(2000);
     }
 }
 

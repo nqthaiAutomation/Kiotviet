@@ -170,4 +170,9 @@ public class ProcedureDefs {
     public void iClickButtonOnTheDialog(String button)  {
         procedureSteps.clickButtonOnTheDialog(button);
     }
+
+    @And("^I click button \"([^\"]*)\" on the form upload$")
+    public void iClickButtonOnTheFormUpload(String button)  {
+        procedureSteps.clickButtonOnTheFormUpload(button);
+    }
 }

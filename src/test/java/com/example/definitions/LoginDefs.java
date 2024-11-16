@@ -74,10 +74,10 @@ public class LoginDefs {
     @Given("^I login susses$")
     public void iLoginSusses() {
         homeSteps.openHomePage();
-        homeSteps.clickButtonOnTheHeaderPage("Đăng nhập");
-        System.out.println(inforStore.toString());
-        loginSteps.inputIntoAddressAccess(inforStore.getString("StoreName"));
-        loginSteps.clickButtonOnThePopup(" Vào cửa hàng ");
+//        homeSteps.clickButtonOnTheHeaderPage("Đăng nhập");
+//        System.out.println(inforStore.toString());
+//        loginSteps.inputIntoAddressAccess(inforStore.getString("StoreName"));
+//        loginSteps.clickButtonOnThePopup(" Vào cửa hàng ");
         loginSteps.inputIntoUserName(inforStore.getString("UserName"));
         loginSteps.inputIntoPassword(inforStore.getString("Password"));
         loginSteps.clickButtonOnTheFormLogin("Quản lý");

@@ -35,6 +35,7 @@ public class LoginPages extends PageObject {
     public void clickButtonOnTheFormLogin(String button) {
         String xPathButon="//input[(@type='submit' or @type='button') and @value='"+button+"']";
         clickOn(getElement(xPathButon));
+        waitABit(5000);
     }
 
     public void verifyErrorDisplayed(String message) {

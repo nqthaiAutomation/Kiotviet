@@ -113,4 +113,8 @@ public class ProcedureSteps {
     public void clickButtonOnTheDialog(String button) {
         procedurePage.clickButtonOnTheDialog(button);
     }
+
+    public void clickButtonOnTheFormUpload(String button) {
+        procedurePage.clickButtonOnTheFormUpload(button);
+    }
 }
