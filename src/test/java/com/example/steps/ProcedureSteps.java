@@ -83,38 +83,40 @@ public class ProcedureSteps {
     public void verifyProcedureIsAddedSusses(String name) {
         procedurePage.verifyProcedureIsAddedSusses(name);
     }
-
+    @Step
     public void iUploadFile(String file) {
         procedurePage.iUploadFile(file);
     }
-
+    @Step
     public void verifyNoDataNotFound() {
         procedurePage.verifyNoDataNotFound();
     }
-
+    @Step
     public void clickButtonOnTheTable(String button) {
         procedurePage.clickButtonOnTheTable(button);
     }
-
+    @Step
     public void expandFirstProcedure() {
         procedurePage.expandFirstProcedure();
     }
-
-
-
+    @Step
     public void clickButtonAddNewOfField(String field) {
         procedurePage.clickButtonAddNewOfField(field);
     }
-
+    @Step
     public void verifyMessageSuccessDisplayed(String message) {
         procedurePage.verifyMessageSuccessDisplayed(message);
     }
-
+    @Step
     public void clickButtonOnTheDialog(String button) {
         procedurePage.clickButtonOnTheDialog(button);
     }
-
+    @Step
     public void clickButtonOnTheFormUpload(String button) {
         procedurePage.clickButtonOnTheFormUpload(button);
+    }
+    @Step
+    public void verifyFieldHasValue(String field, String value) {
+        procedurePage.verifyFieldHasValue(field,value);
     }
 }

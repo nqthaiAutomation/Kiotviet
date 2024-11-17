@@ -13,6 +13,7 @@ import java.util.Set;
 
 public class PageObject extends net.serenitybdd.core.pages.PageObject {
 
+
     public void switchWindow() {
         Set<String> handles = getDriver().getWindowHandles();
         String handle = getDriver().getWindowHandle();

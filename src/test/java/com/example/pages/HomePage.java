@@ -2,6 +2,7 @@ package com.example.pages;
 
 
 import com.example.common.PageObject;
+import net.serenitybdd.core.Serenity;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebElement;
 
@@ -18,6 +19,7 @@ public class HomePage extends PageObject {
         waitABit(2000);
         open();
         getDriver().manage().window().maximize();
+        Serenity.recordReportData().withTitle("Log Data").andContents("Access page susses");
 //        getDriver().manage().window().
     }
 

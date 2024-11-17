@@ -175,4 +175,9 @@ public class ProcedureDefs {
     public void iClickButtonOnTheFormUpload(String button)  {
         procedureSteps.clickButtonOnTheFormUpload(button);
     }
+
+    @Then("^I verify field \"([^\"]*)\" has value \"([^\"]*)\"$")
+    public void iVerifyFieldHasValue(String field, String value)  {
+        procedureSteps.verifyFieldHasValue(field,value);
+    }
 }

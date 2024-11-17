@@ -5,7 +5,6 @@ import net.serenitybdd.core.Serenity;
 import net.serenitybdd.core.pages.WebElementFacade;
 import org.junit.Assert;
 import org.openqa.selenium.*;
-import org.openqa.selenium.remote.server.Session;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.FluentWait;
 
@@ -15,7 +14,7 @@ import java.util.List;
 
 public class ProcedurePage extends PageObject {
     String xPathInputSearch = "//*[contains(@class,'header-filter-search')]//input[@role='listbox']";
-    String xPathButtonAdd = "//*[text()='$s']/ancestor::[@class='form-group']//*[@class='far fa-plus']";
+    String xPathInput = "//*[text()='%s']/ancestor::*[contains(@class,'form-group')]//input[@type='text' and @k-min='0']";
 
     public void selectMenu(String menu) {
         String[] menuItems = menu.split("->");
@@ -174,7 +173,7 @@ public class ProcedurePage extends PageObject {
                 inputToElement(getElement(xPathInput), value);
                 break;
             case "NUMBER":
-                xPathInput = "//*[text()='" + field + "']/ancestor::*[contains(@class,'form-group')]//input[@type='text' and @k-min='0']";
+                xPathInput = String.format(this.xPathInput,field);
                 inputToElement(getElement(xPathInput), value);
                 break;
             case "CHECKBOX":
@@ -247,6 +246,7 @@ public class ProcedurePage extends PageObject {
 
     public void verifyNoDataNotFound() {
 //        xPathInputSearch = "//*[contains(@class,'header-filter-search')]//input[@ng-model='filterQuickSearch']";
+        waitABit(500);
         getDriver().navigate().refresh();
         inputIntoTextboxSearch(Serenity.sessionVariableCalled("codeProcedue"));
         String xPathNoDataNotFound = "//*[@class='no-data']//*[text()='Không tìm thấy kết quả nào phù hợp']";
@@ -298,6 +298,19 @@ public class ProcedurePage extends PageObject {
     private void uploadOnTheFormUpload(String xPathButton, String absolutePath) {
         getElement(xPathButton).sendKeys(absolutePath);
         waitABit(2000);
+    }
+
+    public void verifyFieldHasValue(String field, String value) {
+        String xPathInput = String.format(this.xPathInput,field);
+        if(value.equals(""))
+        {
+            System.out.println("verifyFieldHasValue"+getElement(xPathInput).getAttribute("value"));
+            Assert.assertTrue(getElement(xPathInput).getText().isEmpty());
+        }
+        System.out.println("verifyFieldHasValue"+getElement(xPathInput).getAttribute("value"));
+        Assert.assertTrue(getElement(xPathInput).getAttribute("value").equals(value));
+
+
     }
 }
 
