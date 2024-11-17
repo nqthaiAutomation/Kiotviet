@@ -43,7 +43,7 @@ Feature: Pocedure page
     And I select button "Thêm mới-> Thêm hàng hóa"
     And I input into form with information below
       | Tên hàng:TXT | Giá vốn:NUMBER | Nhóm hàng:OPTION | Giá bán:NUMBER | Tồn kho:NUMBER | Trọng lượng:NUMBER | Bán trực tiếp:CHECKBOX | Upload:IMAGE                      |
-      | TestA        | 5000           | Trang điểm       | 500000         | 2000           | 20                 | false                  | src/test/data/SCPRO01/Capture.JPG |
+      | TestA        | 5000           |  Phụ kiện Nam       | 500000         | 2000           | 20                 | false                  | src/test/data/SCPRO01/Capture.JPG |
     And I click button "Lưu" on the bottom
     Then I verify procedure "TestA" is added susses
 
@@ -60,33 +60,63 @@ Feature: Pocedure page
   Scenario: Add new Categor procedure
     When I select menu "Hàng hóa -> Danh mục"
     And I select button "Thêm mới-> Thêm hàng hóa"
-#    And I click button add new of field "Nhóm hàng"
-#    And I input into form with information below
-#      | Tên nhóm:TXT | Nhóm cha:OPTION |
-#      | aaa5         | Mỹ phẩm         |
-#    And I click button "Lưu" on the dialog
-#    Then I verify message success "Cập nhật dữ liệu thành công" displayed
-#
-#    And I click button add new of field "Nhóm hàng"
-#    And I input into form with information below
-#      | Tên nhóm:TXT | Nhóm cha:OPTION |
-#      | aaa5         | Mỹ phẩm         |
-#    And I click button "Lưu" on the dialog
-#    Then I verify message error "Nhóm hàng: aaa5 đã tồn tại" displayed
-#    And I click button "Bỏ qua" on the bottom
-    And I click button add new of field "Thương hiệu"
     And I input into form with information below
-      | Tên thương hiệu:TXT |
-      | aaa5                |
-    And I click button "Lưu" on the dialog
-    Then I verify message success "Cập nhật dữ liệu thành công" displayed
+      | Mã hàng:TXT |Tên hàng:TXT |
+    |   NU016          |        |
+    Then I verify message error "Mã hàng: NU016 đã tồn tại" displayed
+    When  I input into form with information below
+      | Mã hàng:TXT |Tên hàng:TXT |
+      |   NU016A          |        |
+    And I click button "Lưu" on the bottom
+    Then I verify message error "Vui lòng nhập Tên hàng trước khi lưu" displayed
+    When  I input into form with information below
+      | Mã hàng:TXT |Tên hàng:TXT |
+      |   NU016          | TestA       |
+    And I click button "Lưu" on the bottom
+    Then I verify message error "Vui lòng chọn Nhóm hàng hóa." displayed
 
-    And I click button add new of field "Thương hiệu"
-    And I input into form with information below
-      | Tên thương hiệu:TXT |
-      | aaa5                |
+    When I input into form with information below
+    |Giá vốn:NUMBER|
+    |  Test            |
+    Then I verify field "Giá vốn" has value ""
+    When I input into form with information below
+      |Giá vốn:NUMBER|
+      |  80000            |
+    Then I verify field "Giá vốn" has value "80,000"
+    When I input into form with information below
+      |Giá bán:NUMBER|
+      |  Test            |
+    Then I verify field "Giá bán" has value ""
+    When I input into form with information below
+      |Giá bán:NUMBER|
+      |  80000            |
+    Then I verify field "Giá bán" has value "80,000"
+    When I input into form with information below
+      |Tồn kho:NUMBER|
+      |  Test            |
+    Then I verify field "Tồn kho" has value ""
+    When I input into form with information below
+      |Tồn kho:NUMBER|
+      |  80000            |
+    Then I verify field "Tồn kho" has value "80,000"
+    When I input into form with information below
+      |Trọng lượng:NUMBER|
+      |  Test            |
+    Then I verify field "Trọng lượng" has value ""
+    When I input into form with information below
+      |Trọng lượng:NUMBER|
+      |  80000            |
+    Then I verify field "Trọng lượng" has value "80,000"
+    When I click button add new of field "Nhóm hàng"
     And I click button "Lưu" on the dialog
-    Then I verify message error "Nhóm hàng: aaa5 đã tồn tại" displayed
+    Then I verify message error "Vui lòng nhập tên nhóm hàng trước khi lưu" displayed
+    And I input into form with information below
+    |Tên nhóm:TXT|
+    |Phụ kiện Nam            |
+    And I click button "Lưu" on the dialog
+    Then I verify message error "Nhóm hàng: Phụ kiện Nam đã tồn tại" displayed
+
+
 
 
 
