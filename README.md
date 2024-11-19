@@ -4,13 +4,13 @@ This is a sample application to demonstrate how to setup and run Serenity, Cucum
 
 1. This framework consists of:
 ````
-Serenity – 4.0.30
-Java 17
-Junit – 4.13.2
-Serenity Cucumber - 4.0.30
-Maven Compiler Plugin - 3.12.1
-Maven Surefire Plugin - 3.2.3
-Maven – 3.9.6
+Serenity – 2.0.87
+Java 11
+Junit – 4.12
+Serenity Cucumber - 1.9.45
+Maven Compiler Plugin - 2.19.1
+Maven Surefire Plugin - 2.19.1
+Maven – 3.9.9
 ````
 
 2. To run the tests through command line, use the command
